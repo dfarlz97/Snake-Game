@@ -9,7 +9,7 @@
 ## Contributors 
     [Dennis Farley] (https://github.com/dfarlz97)
     [Natasha Bartley] (https://github.com/natashabartley)
-    [Claire McCafferty] (https://github.com/clairemccafferty)
+    [Claire McCafferty] (https://github.com/cmccafferty96)
 
 ### License 
 Please contribute suggestions! 
