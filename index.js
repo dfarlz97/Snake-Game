@@ -1,5 +1,5 @@
 const canvas = document.getElementById('game');
-const context = canvas.getContext('2d');
+//const context = canvas.getContext('2d');
 
 // need to be var because value will change 
 var grid = 16;
@@ -26,8 +26,12 @@ var item = {
 }
 
 
+const url = "http://localhost:3000/player"
 
-fetch("http://localhost:3000/player")
+fetch("url")
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
-    
+
+const leaderBoard = document.getElementsByClassName('#leader-board')
+
+
