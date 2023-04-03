@@ -31,8 +31,12 @@ const url = "http://localhost:3000/player"
 fetch("url")
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
+const playerData = {
 
-localStorage.setItem("playerData", JSON.stringify(playerData))
+}
+
+playerData = {...data} // populate empty array with json obj
+localStorage.setItem("playerData", JSON.stringify(playerData)) // store player info locally
 
 const leaderBoard = document.getElementsByClassName('.leader-board')
 
