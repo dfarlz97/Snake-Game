@@ -32,6 +32,8 @@ fetch("url")
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
 
+localStorage.setItem("playerData", JSON.stringify(playerData))
+
 const leaderBoard = document.getElementsByClassName('.leader-board')
 
 function renderScores(players){
