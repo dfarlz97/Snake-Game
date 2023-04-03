@@ -30,3 +30,4 @@ var item = {
 fetch("http://localhost:3000/player")
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
+    
