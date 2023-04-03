@@ -1,3 +1,8 @@
+#gameCanvas {
+    border: 1px solid rgb(238, 6, 6);
+    background-color: black;
+  }
+
 .grid {
     width: 300px;
     height: 300px;
