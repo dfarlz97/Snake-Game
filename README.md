@@ -22,3 +22,26 @@ https://www.educative.io/blog/javascript-snake-game-tutorial
 https://www.section.io/engineering-education/how-to-build-a-snake-game-with-javascript/
 
 https://www.youtube.com/watch?v=AaGK-fj-BAM
+
+### Deliverables 
+
+[Event Listeners]
+
+1. Mousemove Basic function of the game
+    
+    addEventListner('mousemove',)
+
+2. 'Click' event to start the game 
+
+3. 'Submit' event for the leaderboard 
+
+Iteration 
+    example:
+
+    cell = []
+    snake = {
+        x: num,
+        y; num,
+    }
+
+    forEach(function(cell,snake))
