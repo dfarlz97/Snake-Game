@@ -32,6 +32,11 @@ fetch("url")
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
 
-const leaderBoard = document.getElementsByClassName('#leader-board')
+const leaderBoard = document.getElementsByClassName('.leader-board')
 
-
+function renderScores(players){
+    const createP = document.createElement('li')
+    const createUl = document.createElement('ul')
+    leaderBoard.textContent = players.score
+    leaderBoard.appendChild(createUl, createP)
+}
