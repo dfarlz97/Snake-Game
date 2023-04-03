@@ -1,17 +1,29 @@
 {
-    "players": {
-        "player1": {
-            "score": 100
-        },
-        "player2": {
-            "score": 75
-        },
-        "player3": {
-            "score": 50
-        },
-        "player4": {
-            "score": 25
-        }
+    "players": [
+        {
+        "id": 1,
+        "userName": "player1",
+        "score": 100
+    },
+        {
+        "id": 2,
+        "userName": "player2",
+        "score": 100
+    },  
+        {
+        "id": 3,
+        "userName": "player3",
+        "score": 100
+    },   
+        {
+        "id": 4,
+        "userName": "player5",
+        "score": 100
+    },
+        {
+        "id": 5,
+        "userName": "player2",
+        "score": 100
     }
+  ]
 }
-  
