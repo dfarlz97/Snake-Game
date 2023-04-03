@@ -1,10 +1,8 @@
-#gameCanvas {
-    border: 1px solid rgb(238, 6, 6);
-    background-color: black;
-  }
 
 h1 {
     text-align: center;
+    border-style: outset;
+    border-radius: 25px;
 }
 .grid {
     width: 300px;
