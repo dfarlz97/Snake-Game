@@ -16,6 +16,9 @@ Please contribute suggestions!
 
 ### Resources
 https://www.freecodecamp.org/news/how-to-build-a-snake-game-in-javascript/
+
 https://www.educative.io/blog/javascript-snake-game-tutorial
+
 https://www.section.io/engineering-education/how-to-build-a-snake-game-with-javascript/
+
 https://www.youtube.com/watch?v=AaGK-fj-BAM
