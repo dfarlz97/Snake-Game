@@ -1,0 +1,19 @@
+[
+    {
+        "id": "player1",
+        "score": "100"
+    },
+    { 
+        "id": "player2",
+        "score": "75"
+    },
+    {
+        "id": "player3",
+        "score": "50"
+    },
+    {
+        "id": "player4",
+        "score": "25"
+    }
+
+]
