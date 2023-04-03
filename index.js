@@ -38,11 +38,16 @@ const playerData = {
 playerData = {...data} // populate empty array with json obj
 localStorage.setItem("playerData", JSON.stringify(playerData)) // store player info locally
 
-const leaderBoard = document.getElementsByClassName('.leader-board')
+const leaderBoard = document.querySelector('.scores')
 
 function renderScores(players){
-    const createP = document.createElement('li')
-    const createUl = document.createElement('ul')
     leaderBoard.textContent = players.score
-    leaderBoard.appendChild(createUl, createP)
+
+    players.scores.forEach((score)=>{
+        let postScore = document.createElement('li')//creating li for each comment obj
+        postScore.textContent = comment.content //setting the textContent from the comment obj
+        // for(let comment of comments) ^
+        leaderBoard.append(postScore) // add new li for each score
+    })
+   
 }
