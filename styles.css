@@ -20,7 +20,7 @@ h1 {
   background-color: #121212;
   border: 0.3em solid #f59929;
   margin: 0 auto;
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
 }
 
