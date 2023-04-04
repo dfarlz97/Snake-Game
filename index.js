@@ -53,6 +53,20 @@ function createBoard() {
     }
   }
 
+function startGame(){
+    let gridSquares = document.querySelectorAll(".grid div");
+    randomItem(gridSquares);
+    direction = 1; // sets direction to 1-right
+    intervalTime = 1000; // sets the time it takes for the snake to move around
+    currentSnake = [2, 1, 0]; // sets grid position of snake
+    currentIndex = 0; // start at index 0
+    currentSnake.forEach(function(index) { // takes the value of currentSnake (index) and 
+        squares[index].classList.add('snake') 
+        interval = setInterval(move, intervalTime); // assigns intervalTime and moveOutcome to interval so it can be called later
+    }) //function move runs every 1s and defines what happens when you move the snake
+}
+
+
 const playerData = {
 
 }
