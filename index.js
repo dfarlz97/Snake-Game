@@ -1,10 +1,13 @@
 const gameBoard = document.getElementsByClassName('grid')
 const url = "http://localhost:3000/players"
+const scoreDisplay = document.getElementsByTagName('tbody')
+
 //const context = canvas.getContext('2d');
 
 // need to be var because value will change 
 let grid = 16;
 let count = 0;
+
 
 let snake = { 
     x: 0,
@@ -38,7 +41,7 @@ let interval = 0; // set interval
 
 fetch(url)
     .then(response => response.json())
-    .then(data => renderLeaderBoard(data))
+    .then(data => console.log(data))
 
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keyup", control);
@@ -62,7 +65,7 @@ function startGame(){
     currentIndex = 0; // start at index 0
     currentSnake.forEach(function(index) { // takes the value of currentSnake (index) and 
         gridSquares[index].classList.add('snake') 
-        interval = setInterval(move, intervalTime); // assigns intervalTime and moveOutcome to interval so it can be called later
+        interval = setInterval(moveResult, intervalTime); // assigns intervalTime and moveOutcome to interval so it can be called later
     }) //function move runs every 1s and defines what happens when you move the snake
 }
 
@@ -124,6 +127,20 @@ function checkForHit(gridSquares){
         return false; // no hits, keep moving
     }
 }
+
+function eatItem(gridSquares, snakeTail){
+    if (gridSquares[currentSnake[0]].classList.contains("item")) { // checks if snake is going to hit an item
+        gridSquares[currentSnake[0]].classList.remove("item"); // if true, removes the item 
+        gridSquares[snakeTail].classList.add("snake"); // adds cell to snake 
+        currentSnake.push(snakeTail); // adds a cell to end of snake
+        randomItem(gridSquares); // sets random position to item after it is eaten
+        score++; // increases score by 1 when item is eaten 
+        scoreDisplay.textContent = score; // adds 1 to score and displays 
+        clearInterval(interval); // clear the interval so that it can increase
+        intervalTime = intervalTime * speed; // increases speed 
+        interval = setInterval(moveSnake, intervalTime); // sets new interval
+      }
+    }
 // const playerData = {
 
 // }
