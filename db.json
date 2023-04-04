@@ -8,22 +8,22 @@
         {
         "id": 2,
         "userName": "player2",
-        "score": 100
+        "score": 75
     },  
         {
         "id": 3,
         "userName": "player3",
-        "score": 100
+        "score": 50
     },   
         {
         "id": 4,
-        "userName": "player5",
-        "score": 100
+        "userName": "player4",
+        "score": 25
     },
         {
         "id": 5,
-        "userName": "player2",
-        "score": 100
+        "userName": "player5",
+        "score": 0
     }
   ]
 }
