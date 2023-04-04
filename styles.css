@@ -3,6 +3,11 @@ h1 {
     margin: 25px;
 }
 
+* {
+    font-family: 
+    'Roboto Mono',
+     monospace;}
+
 .grid  {
     width: 300px;
     height: 300px;
@@ -21,7 +26,7 @@ h1 {
   }
 
 .snake {
-    background: blue;
+    background: #F59A27;
   }
   
 .item {
@@ -30,7 +35,7 @@ h1 {
   }
   
 .start {
-    background: rgb(32, 31, 31);
+    background: #79A822;
     width: 100px;
     height: 100px;
     position: fixed;
