@@ -28,29 +28,25 @@ var item = {
 
 const url = "http://localhost:3000/player"
 
+
+// use fetch to load JSON data
 fetch("url")
-    .then(response => response.json())
-    .then(data => renderLeaderBoard(data))
-const playerData = {
-
-}
-
-playerData = {...data} // populate empty array with json obj
-localStorage.setItem("playerData", JSON.stringify(playerData)) // store player info locally
-
-const leaderBoard = document.querySelector('.scores')
-
-function renderScores(players){
-    leaderBoard.textContent = players.score
-
-    players.scores.forEach((score)=>{
-        let postScore = document.createElement('li')//creating li for each comment obj
-        postScore.textContent = comment.content //setting the textContent from the comment obj
-        // for(let comment of comments) ^
-        leaderBoard.append(postScore) // add new li for each score
-    })
-   
-}
+.then(response => response.json())
+.then(data => {
+    // code to populate the data
+    const tableBody = document.querySelector('tbody');
+// in the ".then() method, loop through JSON data and create new row for each item"
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        const playerCell = document.createElement('td');
+        const scoreCell = document.createElement('td');
+        playerCell.textContent = item.player;
+        scoreCell.textContent = item.score;
+        row.appendChild(playerCell);
+        row.appendChild(scoreCell);
+        tableBody.appendChild(row);
+    });
+});
 
 // adding event listener for form's submit button
 
