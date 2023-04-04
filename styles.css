@@ -23,11 +23,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-.grid div {
-    width: 30px;
-    height: 30px;
-}
-
 .snake {
   background: #F59A27;
 }
