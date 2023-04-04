@@ -141,6 +141,16 @@ function eatItem(gridSquares, snakeTail){
         interval = setInterval(moveSnake, intervalTime); // sets new interval
       }
     }
+
+function randomItem(gridSquares){
+    do {
+        itemIndex = Math.floor(Math.random() * gridSquares.length); // selects random position for item
+    } 
+    while (gridSquares[itemIndex].classList.contains("snake")); // while there is no snake in that position 
+        gridSquares[itemIndex].classList.add("item"); // adds item to unoccupied position
+    }
+
+
 // const playerData = {
 
 // }
