@@ -1,4 +1,5 @@
-const canvas = document.getElementById('game');
+const canvas = document.getElementById('gameCanvas');
+const url = "http://localhost:3000/player"
 //const context = canvas.getContext('2d');
 
 // need to be var because value will change 
@@ -25,12 +26,20 @@ var item = {
     y: 0
 }
 
+let width = 10; // width of grid
+let currentIndex = 0; // start at 0 and increment
+let itemIndex = 0; // item starts at index 0 as well
+let currentSnake = [2, 1, 0]; // snake is in an array
+let direction = 1;
+let score = 0; // score starts at 0 
+let speed = 0.8; // set speed variable
+let intervalTime = 0; // set interval
+let interval = 0; // set interval
 
-const url = "http://localhost:3000/player"
-
-fetch("url")
+fetch(url)
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
+
 const playerData = {
 
 }
