@@ -51,16 +51,16 @@ h1 {
   color: #fff; 
   font-size: 1.5vw; 
   padding: 1%; 
-  margin-top: 500px;
-  margin-right: 450px;
+  margin-top: 400px;
+  margin-right: 320px;
 }
 
-#table{
-    position: relative;
+.table{
+    position: fixed;
     margin-bottom: 100px;
     margin-top: -325px;
 }
 
-#form{
-    margin-top: -100px   
+#user {
+    margin-left: 0px;
 }
