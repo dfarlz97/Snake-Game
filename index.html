@@ -30,40 +30,26 @@
         <label for="player-score">Score:</label>
         <input type="number" id="player-score" name="player-score" required><br>
         <script src="leaderboard.js"></script>
+    </div>    
 
-    <form id="form"></form>
+    <form id="scoreTable"></form>
     <div id="tableDiv"> 
-        <table id = "table" border="1" cellspacing="5" bgcolor="">
-            <caption><b>Leader Board</b></caption>
-            <tr>
-                <th>USERNAME</th>
-                <th>SCORE</th>
-             </tr>
-             <tr>
-                <td>Player1</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>Player2</td>
-                <td>75</td>
-            </tr>
-            <tr>
-                <td>Player3</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>Player4</td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>Player5</td>
-                <td>0</td>
-            </tr>
+        <table id = "scores">
+        <thead>
+        <tr>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
         </table>
+        
     </div>
 
     <div>
-    <form id="form"></form>
+    <form id="submitForm"></form>
         <input
           class="comment-input"
           type="text"
@@ -75,8 +61,8 @@
     </div>
         
     
-    
 
+    
     <div class ="start">
         <button>START GAME</button>
     </div>
