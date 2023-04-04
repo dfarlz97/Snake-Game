@@ -54,3 +54,9 @@ h1 {
   margin-top: 400px;
   margin-right: 450px;
 }
+
+#table{
+    position: relative;
+    margin-bottom: 100px;
+    margin-top: -325px;
+}
