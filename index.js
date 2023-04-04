@@ -51,3 +51,24 @@ function renderScores(players){
     })
    
 }
+
+// adding event listener for form's submit button
+
+const form = document.getElementById('leaderboard-form');
+const playerNameInput = document.getElementById('player-name');
+const playerScoreInput = document.getElementById('player-score');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); //prevent the form from submitting
+
+    const playerName = playerNameInput.value;
+    const playerScore = playerScoreInput.value;
+
+    //add the player and score to the leaderboard
+    updateLeaderboard(playerName, playerScore);
+
+    //clear the form inputs
+
+    playerNameInput.value = '';
+    playerScoreInput.value = '';
+});
