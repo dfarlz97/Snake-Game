@@ -1,54 +1,58 @@
 body {
-    background-color: #121212;
-
+  background-color: #121212;
 }
 
 h1 {
-    text-align: center;
-    margin: 25px;
+  text-align: center;
+  margin: 2.5%;
 }
 
 * {
-    font-family: 'DotGothic16', monospace, sans-serif;
-    font-weight: bold;
-    color:  #ff9616;
-    letter-spacing: .2rem;
+  font-family: 'DotGothic16', monospace, sans-serif;
+  font-weight: bold;
+  color:  #ff9616;
+  letter-spacing: 0.2rem;
 }
 
 .grid  {
-    width: 300px;
-    height: 300px;
-    background-color: #121212;
-    border: 10px;
-    border-style: inset;
-    border-color: #f59929;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
+  width: 30%;
+  height: 40%;
+  background-color: #121212;
+  border: 0.3em solid #f59929;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .grid div {
-    width: 20px;
-    height: 20px;
-  }
+  width: 2%;
+  height: 2%;
+}
 
 .snake {
-    background: #F59A27;
-  }
-  
+  background: #F59A27;
+}
+
 .item {
-    background: yellow;
-    border-radius: 20px;
-  }
+  background: yellow;
+  border-radius: 20px;
+}
+
+.start button {
+  background-color: #79A822;
+  width: 20vw; 
+  height: 10vh; 
+  position: absolute;
+  top: 5vh; 
+  right: 5vw; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; 
+  font-size: 1.5vw; 
+  padding: 1%; 
+}
   
-.start {
-    background: #79A822;
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    top: 100px;
-    left: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  
+  
+  
