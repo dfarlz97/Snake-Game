@@ -1,4 +1,4 @@
-const gameBoard = document.getElementsByClassName('grid')
+const gameBoard = document.getElementsByClassName('.grid')
 const url = "http://localhost:3000/players"
 const scoreDisplay = document.getElementsByTagName('tbody')
 
@@ -150,6 +150,17 @@ function randomItem(gridSquares){
         gridSquares[itemIndex].classList.add("item"); // adds item to unoccupied position
     }
 
+function control(event){
+    if (event.keycode === 39) { // 39 is keycode for right
+        direction = 1; // right
+      } else if (event.keycode === 38) { // keycode for up 
+        direction = -width; //if we press the up arrow, the snake will go ten divs up
+      } else if (event.keycode === 37) { // keycode for left
+        direction = -1; // snake will go left one div
+      } else if (event.keycode === 40) { //keycode for down
+        direction = +width; // down the snake head will go 10 divs below current div
+      }
+    }
 
 // const playerData = {
 
