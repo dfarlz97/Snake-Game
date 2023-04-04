@@ -35,6 +35,15 @@ CSS borders
 https://www.w3schools.com/css/css_border.asp
 https://www.w3schools.com/css/css3_borders.asp //rounded corners
 
+Glassmorphism UI design 
+https://codepen.io/_rahul/pen/NWXjOXW
+https://codepen.io/TheMOZZARELLA/pen/ExwRvVN
+https://codepen.io/thedevenv/pen/JjrXayd
+
+Animated star background 
+https://codepen.io/riley-pearce/pen/OJWPjZMfbclid=IwAR2HwzINeVhFg7-YQvFDV8Teh-IH6akXO9RY3uMTapRobDt-R9fJ6-GIMkY
+
+
 
 
 ### Deliverables 
