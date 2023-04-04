@@ -77,7 +77,15 @@ function moveResult(){
       }
 }
 
-
+function moveSnake(gridSquares) {
+    let snakeTail = currentSnake.pop(); // selects last cell of snake
+    gridSquares[snakeTail].classList.remove("snake"); // removes last cell of snake
+    currentSnake.unshift(currentSnake[0] + direction); // adds new cell value to beginning of snake array 
+                                                        // snake = [2,1,0] ---> [2,1] ---> [3,2,1]
+    // movement ends here
+    eatItem(gridSquares, snakeTail); // check to see if snake has eaten item
+    gridSquares[currentSnake[0]].classList.add("snake"); // displays snake head after checking
+}
 
 // const playerData = {
 
