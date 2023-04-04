@@ -1,6 +1,7 @@
-const gameBoard = document.getElementsByClassName('.grid')
+const gameBoard = document.querySelector('.grid')
 const url = "http://localhost:3000/players"
 const scoreDisplay = document.getElementsByTagName('tbody')
+const startButton = document.querySelector('body > div.start > button')
 
 //const context = canvas.getContext('2d');
 
@@ -38,6 +39,7 @@ let score = 0; // score starts at 0
 let speed = 1; // set speed variable
 let intervalTime = 0; // set interval
 let interval = 0; // set interval
+let alertMessage = document.querySelector('alert')
 
 fetch(url)
     .then(response => response.json())
@@ -46,9 +48,13 @@ fetch(url)
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keyup", control);
     createBoard();
-    startGame();
+    buttonStart();
 });
 
+function buttonStart(){
+    startButton.addEventListener('click', (e) =>
+    startGame())
+}
 function createBoard() {
     for (let i = 0; i < 100; i++) {
       let createSnake = document.createElement("div");
@@ -72,8 +78,7 @@ function startGame(){
 function moveResult(){
     let gridSquares = document.querySelectorAll(".grid div")
     if (checkForHit(gridSquares)) { // checks to see if snake has checkForHit function evaluates as true 
-        alert("GAME OVER"); // alerts if wall is hit 
-        popup.style.display = "flex";
+        startButton.textContent = 'GAME OVER :('
         return clearInterval(interval);  // ends game
       } else { // if checkForHit resolves false then continue to move snake
         moveSnake(gridSquares);
