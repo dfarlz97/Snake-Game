@@ -40,6 +40,19 @@ fetch(url)
     .then(response => response.json())
     .then(data => renderLeaderBoard(data))
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("keyup", control);
+    createBoard();
+    startGame();
+});
+
+function createBoard() {
+    for (let i = 0; i < 100; i++) {
+      let createDiv = document.createElement("div");
+      gameCanvas.appendChild(createDiv);
+    }
+  }
+
 const playerData = {
 
 }
