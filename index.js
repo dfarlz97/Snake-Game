@@ -1,6 +1,6 @@
-const canvas = document.getElementById('gameCanvas');
+const gameCanvas = document.getElementById('gameCanvas');
 const url = "http://localhost:3000/player"
-//const context = canvas.getContext('2d');
+const context = gameCanvas.getContext('2d');
 
 // need to be var because value will change 
 var grid = 16;
@@ -38,7 +38,7 @@ let interval = 0; // set interval
 
 fetch(url)
     .then(response => response.json())
-    .then(data => renderLeaderBoard(data))
+    .then(data => renderLeaderboard(data))
 
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keyup", control);
@@ -53,21 +53,26 @@ function createBoard() {
     }
   }
 
-const playerData = {
+const userData = {
 
 }
 
-playerData = {...data} // populate empty array with json obj
-localStorage.setItem("playerData", JSON.stringify(playerData)) // store player info locally
+let playerData = {};
+
+function renderScoreboard(data) {
+    playerData = {...data}; // populate empty object with JSON object
+    localStorage.setItem("playerData", JSON.stringify(playerData));
+}
+
 
 const leaderBoard = document.querySelector('.scores')
 
-function renderScores(players){
-    leaderBoard.textContent = players.score
+function renderScores(score){
+    leaderBoard.innerHTML = score.score;
 
-    players.scores.forEach((score)=>{
+    playerData.scores.forEach((score)=>{
         let postScore = document.createElement('li')//creating li for each comment obj
-        postScore.textContent = comment.content //setting the textContent from the comment obj
+        postScore.textContent = score //setting the textContent from the comment obj
         // for(let comment of comments) ^
         leaderBoard.append(postScore) // add new li for each score
     })
@@ -97,11 +102,11 @@ form.addEventListener('submit', (event) => {
 
 const leaderboard = [];
 // create a new player object
-function updateLeaderboard(playerName, playerScore) {
+function updateLeaderboard(playerName, playerScore, leaderboard) {
 
     const player = {
         name: playerName,
-        score: playerScore,
+        score: parseInt(playerScore),
     };
 
     // add the player to the leaderboard
@@ -111,7 +116,7 @@ function updateLeaderboard(playerName, playerScore) {
     leaderboard.sort((a, b) => b.score - a.score);
 
     // render the updated leaderboard
-    renderLeaderboard();
+    renderScores(leaderboard);
 }
 
 const leaderboardElement = document.createElement('ul');
@@ -130,3 +135,21 @@ function renderLeaderboard() {
     // add the leaderboard to the page
     document.body.appendChild(leaderboardElement);
 }
+// use fetch to load JSON data
+fetch(url)
+.then(response => response.json())
+.then(data => {
+    // code to populate the data
+    const tableBody = document.querySelector('tbody');
+// in the ".then() method, loop through JSON data and create new row for each item"
+    data.scores.forEach(item => {
+        const row = document.createElement('tr');
+        const playerCell = document.createElement('td');
+        const scoreCell = document.createElement('td');
+        playerCell.textContent = item.playerName;
+        scoreCell.textContent = item.playerScore;
+        row.appendChild(playerCell);
+        row.appendChild(scoreCell);
+        tableBody.appendChild(row);
+    });
+});
