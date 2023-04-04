@@ -72,3 +72,39 @@ form.addEventListener('submit', (event) => {
     playerNameInput.value = '';
     playerScoreInput.value = '';
 });
+
+const leaderboard = [];
+// create a new player object
+function updateLeaderboard(playerName, playerScore) {
+
+    const player = {
+        name: playerName,
+        score: playerScore,
+    };
+
+    // add the player to the leaderboard
+    leaderboard.push(player);
+
+    // sort the leaderboard by score in descending order
+    leaderboard.sort((a, b) => b.score - a.score);
+
+    // render the updated leaderboard
+    renderLeaderboard();
+}
+
+const leaderboardElement = document.createElement('ul');
+
+function renderLeaderboard() {
+    // clear the previous leaderboard
+    leaderboardElement.innerHTML = '';
+
+    // render each player as a list item
+    leaderboard.forEach((player) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${player.name}: ${player.score}`;
+        leaderboardElement.appendChild(listItem);
+    });
+
+    // add the leaderboard to the page
+    document.body.appendChild(leaderboardElement);
+}
