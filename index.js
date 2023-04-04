@@ -68,7 +68,7 @@ function startGame(){
 
 function moveResult(){
     let gridSquares = document.querySelectorAll(".grid div")
-    if (checkForHit(gridSquares)) { // checks to see if snake has hit wall 
+    if (checkForHit(gridSquares)) { // checks to see if snake has checkForHit function evaluates as true 
         alert("GAME OVER"); // alerts if wall is hit 
         popup.style.display = "flex";
         return clearInterval(interval);  // ends game
@@ -87,6 +87,43 @@ function moveSnake(gridSquares) {
     gridSquares[currentSnake[0]].classList.add("snake"); // displays snake head after checking
 }
 
+function checkForHit(gridSquares){
+    if ( // 4 different conditions specifying whether the snake has hit border
+        (currentSnake[0] + width >= width * width && direction === width) || // if [0] of snake array + width(10) 
+                                                                    // is greater than or equal to width*width (area)
+                                                                    // AND direction is strictly equal to width
+                                                                    //(snake has hit border)
+
+                                                                    // OR
+
+        (currentSnake[0] % width === width - 1 && direction === 1) || // if the difference of [0] of snake array 
+                                                                    // divided by width(10) is strictly equal to
+                                                                    // width(10 -1) = 9 AND direction is equall to 1
+                                                                    //(snake has hit border)
+
+                                                                    // OR
+
+        (currentSnake[0] % width === 0 && direction === -1) || // if the difference of [0] of snake array divided by
+                                                                // width(10) is strictly equal to 0 AND direction is strictly
+                                                                // equal to -1
+                                                                //(snake has hit border)
+
+                                                                // OR
+
+        (currentSnake[0] - width <= 0 && direction === -width) || // if [0] of snake array - width(10) is less than 
+                                                                 // equal to 0 AND direction is strictly equal to -10(-width)
+                                                                 // (snake has hit border)
+
+                                                                 //OR
+                                            
+        gridSquares[currentSnake[0] + direction]                // if the first cell of the current snake array 
+                                                                // and the direction are the same, the snake is eating itself
+    ){
+        return true // means the snake has hit something
+    } else{
+        return false; // no hits, keep moving
+    }
+}
 // const playerData = {
 
 // }
