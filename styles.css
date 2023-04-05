@@ -15,23 +15,27 @@ h1 {
 }
 
 .grid  {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border: 0.3em solid #f59929;
   margin: 0 auto;
   display: grid;
   flex-wrap: wrap;
 }
-
+.grid div {
+    width: 20px;
+    height: 20px;
+    border:1px black solid;
+    box-sizing:border-box;
+}
 .snake {
-  background: #F59A27;
+  background: #dd0d0d;
 }
 
 .item {
-  background: yellow;
+  background: rgb(10, 183, 65);
   border-radius: 20px;
 }
-
 .start button {
   background-color: #79A822;
   width: 20vw; 
