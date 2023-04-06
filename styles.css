@@ -15,29 +15,31 @@ h1 {
 }
 
 .grid  {
-  width: 200px;
-  height: 200px;
-  border: 0.3em solid #f59929;
-  margin: 0 auto;
-  display: grid;
-  flex-wrap: wrap;
-}
-.grid div {
-    width: 20px;
-    height: 20px;
-    border:1px black solid;
-    box-sizing:border-box;
-}
+    width: 200px;
+    height: 200px; 
+    border: 2px solid #EEEB27;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); 
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 2px;
+  }
+  
+  .grid div {
+      box-sizing: border-box;
+      border: 1px solid #EEEB27; 
+  }
+  
 .snake {
-  background: #dd0d0d;
+  background: #28c002;
 }
 
 .item {
-  background: rgb(10, 183, 65);
+  background: rgb(219, 21, 3);
   border-radius: 20px;
 }
 .start button {
-  background-color: #79A822;
+  background-color: #5a5f51;
   width: 20vw; 
   height: 10vh; 
   position: absolute;
