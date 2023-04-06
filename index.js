@@ -40,7 +40,8 @@ let gridSquares = [];
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keyup", control);
     createBoard();
-    startButton.addEventListener('click', startGame)
+    //startGame();
+    // startButton.addEventListener('click', startGame)
 });
 
 function createBoard(){
@@ -48,24 +49,36 @@ function createBoard(){
                                             // it is less than the area of the grid
       let createSnake = document.createElement("div");
       gameBoard.appendChild(createSnake);
-      //gridSquares.push(createSnake); // add div element to gridSquares array
     }
   }
-
-function startGame(){
-    clearInterval(interval); // add this line to stop any previous interval
-    let gridSquares = document.querySelectorAll(".grid div");
-    randomItem(gridSquares);
-    direction = 1;
-    intervalTime = 1000;
-    currentSnake = [2, 1, 0];
-    currentIndex = 0;
-    currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
-    // currentSnake.forEach(function(index) {
-    //     gridSquares[index].classList.add('snake');
-    // });
-    interval = setInterval(moveResult, intervalTime);
-  }
+startButton.addEventListener('click', (e)=>{
+    function startGame(){
+        clearInterval(interval); // add this line to stop any previous interval
+        let gridSquares = document.querySelectorAll(".grid div");
+        randomItem(gridSquares);
+        direction = 1;
+        intervalTime = 1000;
+        currentSnake = [2, 1, 0];
+        currentIndex = 0;
+        currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
+        interval = setInterval(moveResult, intervalTime);
+      }
+      startGame()
+})
+// function startGame(){
+//     clearInterval(interval); // add this line to stop any previous interval
+//     let gridSquares = document.querySelectorAll(".grid div");
+//     randomItem(gridSquares);
+//     direction = 1;
+//     intervalTime = 1000;
+//     currentSnake = [2, 1, 0];
+//     currentIndex = 0;
+//     currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
+//     // currentSnake.forEach(function(index) {
+//     //     gridSquares[index].classList.add('snake');
+//     // });
+//     interval = setInterval(moveResult, intervalTime);
+//   }
   
 function moveResult() {
     let gridSquares = document.querySelectorAll(".grid div");
@@ -73,7 +86,7 @@ function moveResult() {
       startButton.textContent = "GAME OVER :(";
       return clearInterval(interval);
     } else {
-        const snakeTail = currentSnake.pop();
+        let snakeTail = currentSnake.pop();
         gridSquares[snakeTail].classList.remove("snake");
         currentSnake.unshift(currentSnake[0] + direction);
         eatItem(gridSquares, snakeTail);
@@ -90,31 +103,6 @@ function moveSnake(gridSquares) {
     gridSquares[currentSnake[0]].classList.add("snake")  
 }
 
-//     if (direction === "up") {
-//       snake.unshift([snake[0][0] - 1, snake[0][1]]);
-//     } else if (direction === "down") {
-//       snake.unshift([snake[0][0] + 1, snake[0][1]]);
-//     } else if (direction === "left") {
-//       snake.unshift([snake[0][0], snake[0][1] - 1]);
-//     } else if (direction === "right") {
-//       snake.unshift([snake[0][0], snake[0][1] + 1]);
-//     }
-  
-//     // if (checkForHit()) {
-//     //   clearInterval(interval);
-//     //   alert("Game Over");
-//     //   return;
-//     // }
-  
-//     if (eatItem()) {
-//       drawItem();
-//     } else {
-//       snake.pop();
-//     }
-  
-//     // drawSnake();
-//   }
-  
 function checkForHit(gridSquares) {
     if(  
         (currentSnake[0] + width >=(width*width) && direction === width) ||
@@ -150,34 +138,21 @@ function randomItem(gridSquares){
     }
 
 function control(e){ 
-    if (e.keycode===39){
+    if (e.keyCode===39){
         direction = 1 // right 
-    }else if (e.keycode===38){ 
+        console.log('right key')
+    }else if (e.keyCode===38){ 
         direction = -width //if we press the up arrow, the snake will go ten divs up
-    }else if (e.keycode===37){ 
+        console.log('up key')
+    }else if (e.keyCode===37){ 
         direction = -1 // left, the snake will go left one div
-    }else if (e.keycode===40){
+        console.log('left key')
+    }else if (e.keyCode===40){
         direction = +width // down the snake head will instantly appear 10 divs below from the current div 
+        console.log('right key')
     } 
 } 
-// function control(event){
-//     document.addEventListener('keydown', function(e) {
-//         switch (e.key) {
-//           case 'ArrowUp':
-//             if (direction !== 'down') direction = 'up';
-//             break;
-//           case 'ArrowDown':
-//             if (direction !== 'up') direction = 'down';
-//             break;
-//           case 'ArrowLeft':
-//             if (direction !== 'right') direction = 'left';
-//             break;
-//           case 'ArrowRight':
-//             if (direction !== 'left') direction = 'right';
-//             break;
-//         }
-//     });      
-// }
+
 
 
 
