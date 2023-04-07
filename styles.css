@@ -1,61 +1,155 @@
-body {
-  background-color: #121212;
-}
-
-h1 {
-  text-align: center;
-  margin: 2.5%;
-}
-
 * {
-  font-family: 'DotGothic16', monospace, sans-serif;
-  font-weight: bold;
-  color:  #ff9616;
-  letter-spacing: 0.2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    color:  #ff9616;
+    letter-spacing: 8px;
+    border: 1px solid red;
 }
-
-.grid  {
-    width: 500px;
-    height: 500px; 
-    border: 2px solid #EEEB27;
+body {
+    background-color: black;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-left: 64px;
+    margin-right: 64px;
+    line-height: 1.5;
+    max-height: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    background-image: url('http://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80');
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 1128px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+  
+#container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    margin: 32px 48px 32px 48px;
+}
+aside {
+    width: 400px;
+    padding: 40px 8px 8px 8px;
+    background-color: lightgoldenrodyellow;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+  
+main {
+    padding: 48px;
+    margin-left: 16px;
+    opacity: 1;
+    background-color: lightgoldenrodyellow;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+  
+h1, h2 {
+    text-align: center;
+    margin: 16px 16px 32px 16px;
+    opacity: 2
+}
+  
+h2 {
+    margin: 16px auto;
+}
+  
+#content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding:8px;
+    position: relative;
+}
+  
+.grid {
+    width: 640px;
+    height: 640px;
+    border: 2px solid black;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(10, 1fr); 
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-gap: 2px;
+    background-color: darkslategrey;
   }
   
-  .grid div {
-      box-sizing: border-box;
-      border: 1px solid #EEEB27; 
-  }
+.grid div {
+    box-sizing: border-box;
+    border: 1px solid black;
+    opacity: 2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+  
+#score {
+    margin: auto;
+    text-align: center;
+    opacity: 2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+  
+#score h4 {
+    font-size: 128px;
+    width: 256px;
+    opacity: 2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
   
 .snake {
-  background: #28c002;
+    background: #28c002;
 }
-
+  
 .item {
-  background: rgb(219, 21, 3);
-  border-radius: 20px;
+    background: rgb(219, 21, 3);
+    border-radius: 20px;
 }
-.start button {
-  background-color: #5a5f51;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff; 
-  font-size: 1.5vw; 
-  padding: 1%; 
-  margin-top: 600px;
-  margin-right: 460px;
+  
+#leaderboard-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    height: 100%;
+    text-align: center;
+    position: relative;
 }
-
-.table{
-    margin-bottom: 100px;
-    margin-top: -600px;
+  
+#rankings-list-container {
+    overflow: scroll;
+    scroll-behavior: smooth;
+    max-height: 520px;
 }
-
-#user {
-    margin-right: 0px;
+  
+#player-signup {
+    bottom: 0;
+    position: relative;
+}
+  
+table {
+    width: 100%;
+}
+  
+th {
+    height: 24px;
+}
+  
+td {
+    text-align: center;
+}
+  
+#game-modal {
+    height: 400px;
+    width: 400px;
+    padding: 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aqua;
+    display: none;
+    text-align: center;
+}
+  
+#game-ui {
+    z-index: 1;
+    position: relative;
 }
