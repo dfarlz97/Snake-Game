@@ -1,6 +1,74 @@
 let gameBoard = document.querySelector('.grid')
-const url = "http://localhost:3000/players"
+const baseUrl = "http://localhost:3000/players"
+const formContainer = document.getElementById('player-form')
+const userForm = document.getElementById("player-form")
+const scoreDisplay = document.querySelector("#score > h4")
+let currentPlayer = JSON.parse(localStorage.getItem("player"))
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    getPlayers()
+    document.addEventListener("keyup", control)
+    createBoard()
+    startGame()
+});
+
+function getPlayers(){
+    fetch(baseUrl)
+    .then(res => res.json())
+    .then(players => players.sort((playerA, playerB) => {
+        const playerAScore = Number(playerA.score)
+        const playerBScore = Number(playerB.score)
+        return playerBScore - playerAScore
+    }))
+    .then(renderRankings)
+}
+function renderRankings(players){
+    for(let i = 0; i < players.length; i++){
+        let ranking = i + 1
+        renderUserRanking(ranking, players[i])
+    }
+}
+
+function renderUserRanking(ranking, player){
+    const rankingsList = document.getElementById("rankings-list")
+
+    const rankingsRow = document.createElement('tr')
+
+    const rankCol = document.createElement('td')
+    rankCol.innerText = ranking
+    const userCol = document.createElement('td')
+    userCol.innerText = player.userName
+    const scoreCol = document.createElement('td')
+    scoreCol.innerText = player.score
+
+    rankingsRow.append(rankCol, userCol, scoreCol)
+    rankingsList.appendChild(rankingsRow)
+}
+
+function createPlayer(e){
+    e.preventDefault()
+
+    const userData = {
+        userName: userForm.player.value,
+        score: scoreDisplay.innerHTML
+    }
+
+    fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+            "content-type": "application/json",
+            "accept": "application/json"
+        },
+        body: JSON.stringify(userData)
+    }).then(res => res.json())
+    .then(player => {
+        localStorage.setItem("player", JSON.stringify(player))
+        getPlayers()
+    })
+
+    userForm.reset()
+}
 let grid = 16;
 
 let snake = { 
@@ -34,11 +102,6 @@ let intervalTime = 0; // set interval
 let interval = 0; // set interval
 let gridSquares = [];
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener("keyup", control)
-    createBoard()
-    startGame()
-});
 
 function createBoard(){
     for (let i = 0; i < 100; i++) { //iterates through and adds div elements as long as it is less than the area of the grid
@@ -150,7 +213,6 @@ function keepCount(){
         console.log(score) 
     }
 }
-
 
 
 
