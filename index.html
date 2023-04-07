@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type ="text/css" href="styles.css"/>
-    <script defer src="./index.js"></script> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- below links to google fonts-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-    <title>Snake Game</title>
-</head>
-<body>
-    <h1>SNAKE-LIKE GAME V1</h1>
-    <div class="grid">
-        
-    </div>
-    
-    <div class ="table"> 
-        <table border='1' cellspacing='5'>
-            <caption><b>Leaderboard</b></caption>
-            <tr>
-                <th>USERNAME</th>
-                <th>SCORE</th>
-            </tr>
-                <tr>
-                    <td>Player1</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Player2</td>
-                    <td>55</td>
-                </tr>
-        </table>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" type ="text/css" href="styles.css"/>
+        <script defer type="text/javascript" src="./index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- below links to google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <title>Snake Game</title>
+    </head>
+    <body>
+        <div id="container">
+            <aside>
+                <h2>Leaderboard</h2>
+                <div id="leaderboard-container">
+                    <div id="rankings-list-container">
+                        <table id="rankings-list">
+                            <tr>
+                                <th>Rank</th>
+                                <th>User</th>
+                                <th>Score</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="player-signup">
+                        <form id="player-form">
+                            <label for="player">Enter a username to save your score!</label><br><br>
+                            <input type="text" name="player" /><br><br>
+                            <button type="Submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+            <main id="game-ui">
+                <h1>SNAKE-LIKE GAME V1</h1>
+                <div id="content">
+                    <div id="game-modal">
+                        <h2>GAME OVER!</h2>
+                        <button>Play again</button>
+                    </div>
+                    <div class="grid" >
 
-    </div>   
-
-    <div>
-    <form id="submitForm"></form>
-        <input
-          class="comment-input"
-          type="text"
-          name="comment"
-          id="user"
-          placeholder="ENTER USERNAME"
-        />
-        <button class="user-button" type="submit">ADD</button>
-    </div>
-        
-    <div class ="start">
-        <button>START GAME</button>
-    </div>
-    
-</body>
+                    </div>
+                    <div id="score">
+                        <h4>0</h4>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
 </html>
-
