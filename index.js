@@ -1,6 +1,6 @@
 let gameBoard = document.querySelector('.grid')
 const baseUrl = "http://localhost:3000/players"
-const formContainer = document.getElementById('player-form')
+const formContainer = document.getElementById('player-signup')
 const userForm = document.getElementById("player-form")
 const scoreDisplay = document.querySelector("#score > h4")
 let currentPlayer = JSON.parse(localStorage.getItem("player"))
@@ -8,10 +8,29 @@ let currentPlayer = JSON.parse(localStorage.getItem("player"))
 
 document.addEventListener("DOMContentLoaded", function() {
     getPlayers()
-    document.addEventListener("keyup", control)
+    if(!!currentPlayer){
+        console.log('HERE')
+        userForm.style.display = "none"
+
+        const userDiv = document.createElement("div")
+        const greetingH4 = document.createElement("h4")
+        const pTag = document.createElement("p")
+
+        greetingH4.innerText = `Welcome back, ${currentPlayer.userName}`
+        pTag.innerText = `Your current high score is ${currentPlayer.score}`
+        userDiv.append(greetingH4, pTag)
+        formContainer.appendChild(userDiv)
+    } else {
+        console.log('NOPE')
+    }
+
+
+    document.addEventListener("keyup", control);
     createBoard()
     startGame()
 });
+
+userForm.addEventListener('submit', createPlayer)
 
 function getPlayers(){
     fetch(baseUrl)
@@ -69,8 +88,8 @@ function createPlayer(e){
 
     userForm.reset()
 }
-let grid = 16;
 
+let grid = 16;
 let snake = { 
     x: 0,
     y: 0,
