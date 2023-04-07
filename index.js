@@ -2,7 +2,7 @@ let gameBoard = document.querySelector('.grid')
 const url = "http://localhost:3000/players"
 
 let grid = 16;
-let count = 0;
+let count = 5;
 
 let snake = { 
     x: 0,
@@ -50,7 +50,8 @@ function createBoard(){
 
 function startGame(){
     clearInterval(interval); // stop any previous interval
-    let gridSquares = document.querySelectorAll(".grid div");        randomItem(gridSquares);
+    let gridSquares = document.querySelectorAll(".grid div");        
+    randomItem(gridSquares);
     direction = 1;
     intervalTime = 1000;
     currentSnake = [2, 1, 0];
@@ -105,6 +106,7 @@ function eatItem(gridSquares, snakeTail) {
       clearInterval(interval);
       intervalTime = intervalTime * speed;
       interval = setInterval(moveResult, intervalTime);
+      keepCount()
     }
   }
 
@@ -142,7 +144,14 @@ function clearBoard(){
 }
 
 
-
+function keepCount(){
+    if(eatItem){
+        let scoreDisplay = document.querySelector("#score")
+        scoreDisplay.innerHTML = count 
+        count = count + 5;
+        console.log(count) 
+    }
+}
 
 
 
