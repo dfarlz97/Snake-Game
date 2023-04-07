@@ -1,7 +1,5 @@
 let gameBoard = document.querySelector('.grid')
 const url = "http://localhost:3000/players"
-const scoreDisplay = document.getElementsByTagName('tbody')
-const startButton = document.querySelector('body > div.start > button')
 
 let grid = 16;
 let count = 0;
@@ -38,20 +36,18 @@ let interval = 0; // set interval
 let gridSquares = [];
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener("keyup", control);
-    createBoard();
-    //startGame();
-    // startButton.addEventListener('click', startGame)
+    document.addEventListener("keyup", control)
+    createBoard()
+    startGame()
 });
 
 function createBoard(){
-    for (let i = 0; i < 100; i++) { //iterates through and adds div elements as long as
-                                            // it is less than the area of the grid
+    for (let i = 0; i < 100; i++) { //iterates through and adds div elements as long as it is less than the area of the grid
       let createSnake = document.createElement("div");
-      gameBoard.appendChild(createSnake);
+      gameBoard.append(createSnake);
     }
-  }
-startButton.addEventListener('click', (e)=>{
+}
+
     function startGame(){
         clearInterval(interval); // add this line to stop any previous interval
         let gridSquares = document.querySelectorAll(".grid div");
@@ -63,28 +59,11 @@ startButton.addEventListener('click', (e)=>{
         currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
         interval = setInterval(moveResult, intervalTime);
       }
-      startGame()
-})
-// function startGame(){
-//     clearInterval(interval); // add this line to stop any previous interval
-//     let gridSquares = document.querySelectorAll(".grid div");
-//     randomItem(gridSquares);
-//     direction = 1;
-//     intervalTime = 1000;
-//     currentSnake = [2, 1, 0];
-//     currentIndex = 0;
-//     currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
-//     // currentSnake.forEach(function(index) {
-//     //     gridSquares[index].classList.add('snake');
-//     // });
-//     interval = setInterval(moveResult, intervalTime);
-//   }
-  
+
 function moveResult() {
     let gridSquares = document.querySelectorAll(".grid div");
     if(checkForHit(gridSquares)){
-      startButton.textContent = "GAME OVER :(";
-      return clearInterval(interval);
+        return clearBoard()
     } else {
         let snakeTail = currentSnake.pop();
         gridSquares[snakeTail].classList.remove("snake");
@@ -93,7 +72,7 @@ function moveResult() {
         gridSquares[currentSnake[0]].classList.add("snake");
     }
   }
-  
+
 function moveSnake(gridSquares) {
     let snakeTail = currentSnake.pop() 
     gridSquares[snakeTail].classList.remove("snake") 
@@ -111,6 +90,7 @@ function checkForHit(gridSquares) {
         (currentSnake[0] - width <= 0 && direction === -width) ||
         gridSquares[currentSnake[0] + direction].classList.contains("snake")   
         ){ 
+            
         return true  
         }else{  
         return false 
@@ -153,8 +133,14 @@ function control(e){
     } 
 } 
 
-
-
+function clearBoard(){
+    if(checkForHit){
+        let gridSquares = document.querySelectorAll(".grid div")
+        currentSnake.forEach(index=>gridSquares[index].classList.remove("snake"))
+        let gridItems = document.querySelectorAll('.item')
+        gridItems[0].remove('item')
+    }
+}
 
 
 
