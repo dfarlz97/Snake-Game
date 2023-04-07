@@ -48,17 +48,16 @@ function createBoard(){
     }
 }
 
-    function startGame(){
-        clearInterval(interval); // add this line to stop any previous interval
-        let gridSquares = document.querySelectorAll(".grid div");
-        randomItem(gridSquares);
-        direction = 1;
-        intervalTime = 1000;
-        currentSnake = [2, 1, 0];
-        currentIndex = 0;
-        currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
-        interval = setInterval(moveResult, intervalTime);
-      }
+function startGame(){
+    clearInterval(interval); // stop any previous interval
+    let gridSquares = document.querySelectorAll(".grid div");        randomItem(gridSquares);
+    direction = 1;
+    intervalTime = 1000;
+    currentSnake = [2, 1, 0];
+    currentIndex = 0;
+    currentSnake.forEach(index=>gridSquares[index].classList.add("snake"))
+    interval = setInterval(moveResult, intervalTime);
+}
 
 function moveResult() {
     let gridSquares = document.querySelectorAll(".grid div");
@@ -122,13 +121,13 @@ function control(e){
         direction = 1 // right 
         console.log('right key')
     }else if (e.keyCode===38){ 
-        direction = -width //if we press the up arrow, the snake will go ten divs up
+        direction = -width //up arrow: snake will go ten divs up
         console.log('up key')
     }else if (e.keyCode===37){ 
-        direction = -1 // left, the snake will go left one div
+        direction = -1 // left: snake will go left one div
         console.log('left key')
     }else if (e.keyCode===40){
-        direction = +width // down the snake head will instantly appear 10 divs below from the current div 
+        direction = +width // down: snake head will instantly appear 10 divs below from the current div 
         console.log('right key')
     } 
 } 
@@ -152,86 +151,3 @@ function clearBoard(){
 
 
 
-
-
-
-
-// fetch(url)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-    
-//     const playerData = {}
-
-// playerData = {...data} // populate empty array with json obj
-// localStorage.setItem("playerData", JSON.stringify(playerData)) // store player info locally
-
-// const leaderBoard = document.querySelector('.scores')
-
-// function renderScores(players){
-//     leaderBoard.textContent = players.score
-
-//     players.scores.forEach((score)=>{
-//         let postScore = document.createElement('li')//creating li for each comment obj
-//         postScore.textContent = comment.content //setting the textContent from the comment obj
-//         // for(let comment of comments) ^
-//         leaderBoard.append(postScore) // add new li for each score
-//     })
-   
-// }
-
-// // adding event listener for form's submit button
-
-// const form = document.getElementById('leaderboard-form');
-// const playerNameInput = document.getElementById('player-name');
-// const playerScoreInput = document.getElementById('player-score');
-
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault(); //prevent the form from submitting
-
-//     const playerName = playerNameInput.value;
-//     const playerScore = playerScoreInput.value;
-
-//     //add the player and score to the leaderboard
-//     updateLeaderboard(playerName, playerScore);
-
-//     //clear the form inputs
-
-//     playerNameInput.value = '';
-//     playerScoreInput.value = '';
-// });
-
-// const leaderboard = [];
-// // create a new player object
-// function updateLeaderboard(playerName, playerScore) {
-
-//     const player = {
-//         name: playerName,
-//         score: playerScore,
-//     };
-
-//     // add the player to the leaderboard
-//     leaderboard.push(player);
-
-//     // sort the leaderboard by score in descending order
-//     leaderboard.sort((a, b) => b.score - a.score);
-
-//     // render the updated leaderboard
-//     renderLeaderboard();
-// }
-
-// const leaderboardElement = document.createElement('ul');
-
-// function renderLeaderboard() {
-//     // clear the previous leaderboard
-//     leaderboardElement.innerHTML = '';
-
-//     // render each player as a list item
-//     leaderboard.forEach((player) => {
-//         const listItem = document.createElement('li');
-//         listItem.textContent = `${player.name}: ${player.score}`;
-//         leaderboardElement.appendChild(listItem);
-//     });
-
-//     // add the leaderboard to the page
-//     document.body.appendChild(leaderboardElement);
-// }
