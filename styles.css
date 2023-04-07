@@ -1,9 +1,10 @@
 * {
     font-family: 'Press Start 2P', cursive;
     font-weight: bold;
-    color:  #ff9616;
+    color: black;
+    border: 1px solid rgb(2, 2, 2);
     letter-spacing: 8px;
-    border: 1px solid red;
+    border: 1px solid rgb(5, 5, 5);
 }
 body {
     background-color: black;
@@ -34,7 +35,8 @@ body {
 aside {
     width: 400px;
     padding: 40px 8px 8px 8px;
-    background-color: lightgoldenrodyellow;
+    background-color: rgb(38, 245, 7);
+    border: 1px solid rgb(7, 5, 5);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
   
@@ -42,18 +44,20 @@ main {
     padding: 48px;
     margin-left: 16px;
     opacity: 1;
-    background-color: lightgoldenrodyellow;
+    background-color: rgb(7, 205, 245);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
   
 h1, h2 {
     text-align: center;
     margin: 16px 16px 32px 16px;
-    opacity: 2
+    opacity: 2;
 }
   
 h2 {
     margin: 16px auto;
+    color: black;
+    border: 1px solid rgb(2, 2, 2);
 }
   
 #content {
@@ -72,14 +76,14 @@ h2 {
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-gap: 2px;
-    background-color: darkslategrey;
+    background-color: rgb(4, 7, 7);
   }
   
 .grid div {
-    box-sizing: border-box;
-    border: 1px solid black;
+    /* box-sizing: border-box; */
+    /* border: 1px solid black; */
     opacity: 2;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: rgba(3, 3, 4, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
   
 #score {
