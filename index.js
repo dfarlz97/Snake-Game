@@ -2,7 +2,6 @@ let gameBoard = document.querySelector('.grid')
 const url = "http://localhost:3000/players"
 
 let grid = 16;
-let count = 5;
 
 let snake = { 
     x: 0,
@@ -143,13 +142,12 @@ function clearBoard(){
     }
 }
 
-
 function keepCount(){
     if(eatItem){
-        let scoreDisplay = document.querySelector("#score")
-        scoreDisplay.innerHTML = count 
-        count = count + 5;
-        console.log(count) 
+        let scoreDisplay = document.querySelector("#score > h4")
+        score +=5;
+        scoreDisplay.innerHTML = score 
+        console.log(score) 
     }
 }
 
