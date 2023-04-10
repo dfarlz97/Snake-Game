@@ -227,7 +227,7 @@ function clearBoard(){
 function keepCount(){
     if(eatItem){
         let scoreDisplay = document.querySelector("#score > h4")
-        score +=5;
+        score +=50;
         scoreDisplay.innerHTML = score 
         console.log(score) 
     }
