@@ -1,10 +1,10 @@
-# Snake-Like Game V1
+# Snake-Game-V1
 
 ## Project Description
-"The player controls a long, thin creature, resembling a snake, which roams around on a bordered plane, picking up food (or some other item), trying to avoid hitting its own tail or the edges of the playing area. Each time the snake eats a piece of food, its tail grows longer, making the game increasingly difficult." 
+This is a custom take on the classic Snake Game! The player's goal is to surive as long as possible while eating the red squares that appear on the screen.  Each square that the player eats increases the size of their snake by one.  Each item eaten contributes +10 to the player's score (shown to the right of the game).  If the snake touches the corner of the game board or the snake itself, the game resets.  Thus, the longer the player's snake, the harder it becomes to avoid hitting a wall.
 
 ## How to play
-"You'll start each game with one green and one red square. The green square is your snake and the red is an apple. Move the snake around the screen and eat as many apples as you can until the screen is full of the snake's body. Each time an apple is eaten, the snake will grow."
+The player starts the game as a controllable snake with three green squares.  A consumable red square will appear at a random location on the game board. The player can move the snake around the game board by using the UP DOWN LEFT RIGHT arrow keys in order to eat the items. Consume as many red squares as you can before filling the entire game board with the snake's body (each red square adds a green square to the snake's body)
 
 ## Contributors 
     [Dennis Farley] (https://github.com/dfarlz97)
@@ -14,16 +14,16 @@
 ### License 
 Please contribute suggestions! 
 
-### Resources - Snake Skeleton
+### Resources 
+
+#### Snake Skeleton:
 https://www.freecodecamp.org/news/how-to-build-a-snake-game-in-javascript/
 
 https://www.educative.io/blog/javascript-snake-game-tutorial
 
 https://www.section.io/engineering-education/how-to-build-a-snake-game-with-javascript/
 
-### Resources - UI,CSS 
-
-#### Background css styling: 
+#### Background CSS: 
 
 http://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
 
