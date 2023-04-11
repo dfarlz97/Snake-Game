@@ -1,3 +1,4 @@
+
 * {
     font-family: 'Press Start 2P', cursive;
     font-weight: bold;
@@ -7,7 +8,6 @@
     border: 1px solid rgb(5, 5, 5);
 }
 body {
-    background-color: black;
     padding-top: 80px;
     padding-bottom: 80px;
     margin-left: 64px;
@@ -25,8 +25,7 @@ body {
 }
   
 #container {
-    height: 1000px;
-    width: 700px;
+    height: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
     background: rgba(0, 0, 0, 0.4);
@@ -47,7 +46,6 @@ main {
     margin-left: 16px;
     opacity: 1;
     /* background-color: rgb(7, 205, 245); */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
   
 h1, h2 {
@@ -55,13 +53,17 @@ h1, h2 {
     margin: 16px 16px 32px 16px;
     opacity: 2;
 }
-  
+#title{
+    margin-left: 200px;
+    text-align: left;
+    color: red;
+}
 h2 {
     margin: 16px auto;
-    color: black;
+    color: rgb(247, 5, 5);
     border: 1px solid rgb(2, 2, 2);
 }
-  
+
 #content {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -82,10 +84,9 @@ h2 {
   }
   
 .grid div {
-    /* box-sizing: border-box; */
-    /* border: 1px solid black; */
+    /* box-sizing: border-box; 
+    border: 1px solid black; */
     opacity: 2;
-    box-shadow: rgba(3, 3, 4, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
   
 #score {
@@ -96,7 +97,8 @@ h2 {
 }
   
 #score h4 {
-    font-size: 50px;
+    font-size: 75px;
+    color: red;
     width: 256px;
     opacity: 2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -129,9 +131,13 @@ h2 {
     bottom: 0;
     position: relative;
 }
-  
-table {
-    width: 100%;
+#rankings-list{
+    width: 800px;
+    height: 800px;
+}
+
+#player-form{
+    color: red;
 }
   
 th {
@@ -146,11 +152,10 @@ td {
     height: 400px;
     width: 400px;
     padding: 16px;
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: aqua;
     display: none;
     text-align: center;
 }
