@@ -131,6 +131,7 @@ h2 {
     bottom: 0;
     position: relative;
 }
+
 #rankings-list{
     width: 800px;
     height: 800px;
@@ -138,6 +139,28 @@ h2 {
 
 #player-form{
     color: red;
+    display: block;
+    font-size: 100px;
+}
+
+#info{
+    margin-top: 0px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: -4px 4px #ef3550,
+        -8px 8px #f48fb1,
+        -12px 12px #7e57c2,
+        -16px 16px #2196f3,
+        -20px 20px #26c6da,
+        -24px 24px #43a047,
+        -28px 28px #eeff41,
+        -32px 32px #f9a825,
+        -36px 36px #ff5722;
 }
   
 th {
