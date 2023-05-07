@@ -6,6 +6,8 @@ This is a custom take on the classic Snake Game! The player's goal is to surive 
 ## How to play
 The player starts the game as a controllable snake with three green squares.  A consumable red square will appear at a random location on the game board. The player can move the snake around the game board by using the UP DOWN LEFT RIGHT arrow keys in order to eat the items. Consume as many red squares as you can before filling the entire game board with the snake's body (each red square adds a green square to the snake's body)
 
+### Demo
+![Snake Game V1 Demo](assets/Snake.gif)
 ## Contributors 
     [Dennis Farley] (https://github.com/dfarlz97)
     [Natasha Bartley] (https://github.com/natashabartley)
