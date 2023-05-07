@@ -1,13 +1,96 @@
+/* Resetting CSS for page */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+    text-align: center;
+    z-index: -1;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* CSS for project */
 
 * {
     font-family: 'Press Start 2P', cursive;
     font-weight: bold;
-    color: black;
-    border: 1px solid rgb(2, 2, 2);
+    color: #ff9616;
     letter-spacing: 8px;
-    border: 1px solid rgb(5, 5, 5);
+    border: 1px solid red;
 }
+
 body {
+    background-color: black;
     padding-top: 80px;
     padding-bottom: 80px;
     margin-left: 64px;
@@ -17,13 +100,17 @@ body {
     min-width: 1200px;
     overflow: hidden;
     background-image: url('http://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80');
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 1128px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-color: #cccccc;
+    /* Used if the image is unavailable */
+    height: 1128px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
     background-size: cover;
 }
-  
+
 #container {
     height: 100%;
     display: grid;
@@ -32,45 +119,41 @@ body {
     z-index: 5;
     margin: 32px 48px 32px 48px;
 }
+
 aside {
     width: 400px;
-    height: 700px;
     padding: 40px 8px 8px 8px;
-    background-color: rgb(38, 245, 7);
-    border: 1px solid rgb(7, 5, 5);
+    background-color: lightgoldenrodyellow;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-  
+
 main {
     padding: 48px;
     margin-left: 16px;
     opacity: 1;
-    /* background-color: rgb(7, 205, 245); */
+    background-color: lightgoldenrodyellow;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
 }
-  
-h1, h2 {
+
+h1,
+h2 {
     text-align: center;
     margin: 16px 16px 32px 16px;
-    opacity: 2;
+    opacity: 2
 }
-#title{
-    margin-left: 200px;
-    text-align: left;
-    color: red;
-}
+
 h2 {
     margin: 16px auto;
-    color: rgb(247, 5, 5);
-    border: 1px solid rgb(2, 2, 2);
 }
 
 #content {
     display: grid;
     grid-template-columns: 1fr auto;
-    padding:8px;
+    padding: 8px;
     position: relative;
 }
-  
+
 .grid {
     width: 640px;
     height: 640px;
@@ -80,39 +163,39 @@ h2 {
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-gap: 2px;
-    background-color: rgb(4, 7, 7);
-  }
-  
-.grid div {
-    /* box-sizing: border-box; 
-    border: 1px solid black; */
-    opacity: 2;
+    background-color: darkslategrey;
 }
-  
+
+.grid div {
+    box-sizing: border-box;
+    border: 1px solid black;
+    opacity: 2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 #score {
     margin: auto;
     text-align: center;
     opacity: 2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-  
+
 #score h4 {
-    font-size: 75px;
-    color: red;
+    font-size: 128px;
     width: 256px;
     opacity: 2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-  
+
 .snake {
     background: #28c002;
 }
-  
+
 .item {
     background: rgb(219, 21, 3);
     border-radius: 20px;
 }
-  
+
 #leaderboard-container {
     display: grid;
     grid-template-rows: 2fr 1fr;
@@ -120,69 +203,43 @@ h2 {
     text-align: center;
     position: relative;
 }
-  
+
 #rankings-list-container {
     overflow: scroll;
     scroll-behavior: smooth;
     max-height: 520px;
 }
-  
+
 #player-signup {
     bottom: 0;
     position: relative;
 }
 
-#rankings-list{
-    width: 800px;
-    height: 800px;
+table {
+    width: 100%;
 }
 
-#player-form{
-    color: red;
-    display: block;
-    font-size: 100px;
-}
-
-#info{
-    margin-top: 0px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 3rem;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: -4px 4px #ef3550,
-        -8px 8px #f48fb1,
-        -12px 12px #7e57c2,
-        -16px 16px #2196f3,
-        -20px 20px #26c6da,
-        -24px 24px #43a047,
-        -28px 28px #eeff41,
-        -32px 32px #f9a825,
-        -36px 36px #ff5722;
-}
-  
 th {
     height: 24px;
 }
-  
+
 td {
     text-align: center;
 }
-  
+
 #game-modal {
     height: 400px;
     width: 400px;
     padding: 16px;
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background-color: aqua;
     display: none;
     text-align: center;
 }
-  
+
 #game-ui {
     z-index: 1;
     position: relative;
